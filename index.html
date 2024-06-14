@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Password Generator</h1>
+      <div class="password-output">
+        <p id="generated-password">Click "Generate" to create a password</p>
+        <p id="error-message" class="error-message"></p>
+        <button id="copyBtn">Copy</button>
+        <p id="copy-message" class="copy-message"></p>
+      </div>
+      <div class="options">
+        <label for="passwordLength">Password length:</label>
+        <input
+          type="range"
+          id="passwordLength"
+          name="passwordLength"
+          min="4"
+          max="32"
+          value="16"
+          oninput="this.nextElementSibling.value = this.value"
+        />
+        <output>16</output>
+
+        <div class="checkbox-row">
+          <div class="checkbox-group">
+            <input type="checkbox" id="uppercase" name="uppercase" /><label for="uppercase"
+              >Uppercase</label
+            >
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="lowercase" name="lowercase" /><label for="lowercase"
+              >Lowercase</label
+            >
+          </div>
+        </div>
+        <div class="checkbox-row">
+          <div class="checkbox-group">
+            <input type="checkbox" id="numbers" name="numbers" /><label for="numbers"
+              >Numbers</label
+            >
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="symbols" name="symbols" /><label for="symbols"
+              >Symbols</label
+            >
+          </div>
+        </div>
+
+        <button id="generateBtn">Generate Password</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
